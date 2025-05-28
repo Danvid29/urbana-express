@@ -6,20 +6,28 @@
   <title>Urbana Express – Profesional</title>
   <meta name="description" content="Soluciones de reparto urbano profesionales y confiables">
   <link rel="icon" href="img/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- 1. Preload tipografía -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- 2. Preload CSS crítico -->
+  <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- 3. Preload imágenes principales -->
+  <link rel="preload" as="image" href="img/icon-fast.webp">
+  <link rel="preload" as="image" href="img/icon-schedule.webp">
+  <link rel="preload" as="image" href="img/icon-secure.webp">
+  <link rel="preload" as="image" href="img/logo-blue-green.png">
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <div class="container nav-container">
-      <a href="#hero" class="logo">
-        <img
-          src="img/logo.png"
-          alt="Logotipo Urbana Express"
-          width="64" height="64"
-        >
-      </a>
+      <a href="#hero" class="logo" aria-label="Volver al inicio"><img src="img/logo-blue-green.png" alt="Urbana Express" width="64" height="64"></a>
       <nav class="nav">
         <ul class="nav-list">
           <li><a href="#hero">Inicio</a></li>
@@ -28,9 +36,7 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     </div>
   </header>
 
@@ -49,25 +55,28 @@
       <h2>Nuestros Servicios</h2>
       <div class="cards">
         <a href="#" class="card">
-          <div class="card-inner">
+          <picture>
+            <source srcset="img/icon-fast.webp" type="image/webp">
             <img src="img/icon-fast.png" alt="Rápido" width="64" height="64" loading="lazy">
-            <h3>Mensajería Inmediata</h3>
-            <p>Recojo y entrega en menos de 60 minutos.</p>
-          </div>
+          </picture>
+          <h3>Mensajería Inmediata</h3>
+          <p>Recojo y entrega en menos de 60 minutos.</p>
         </a>
         <a href="#" class="card">
-          <div class="card-inner">
+          <picture>
+            <source srcset="img/icon-schedule.webp" type="image/webp">
             <img src="img/icon-schedule.png" alt="Programado" width="64" height="64" loading="lazy">
-            <h3>Reparto Programado</h3>
-            <p>Elige fecha y hora; nosotros cumplimos.</p>
-          </div>
+          </picture>
+          <h3>Reparto Programado</h3>
+          <p>Elige fecha y hora; nosotros cumplimos.</p>
         </a>
         <a href="#" class="card">
-          <div class="card-inner">
+          <picture>
+            <source srcset="img/icon-secure.webp" type="image/webp">
             <img src="img/icon-secure.png" alt="Seguro" width="64" height="64" loading="lazy">
-            <h3>Entrega Segura</h3>
-            <p>Seguimiento continuo y confirmación.</p>
-          </div>
+          </picture>
+          <h3>Entrega Segura</h3>
+          <p>Seguimiento continuo y confirmación.</p>
         </a>
       </div>
     </div>
@@ -81,9 +90,7 @@
         <div class="slide">“Excelente servicio, mi paquete llegó en 30 minutos.”<span>– Laura R.</span></div>
         <div class="slide">“Muy profesional y eficiente, 5 estrellas.”<span>– Jorge M.</span></div>
         <div class="slide">“Su app de rastreo funciona de maravilla.”<span>– Camila T.</span></div>
-        <div class="slide logo-slide">
-          <img src="img/logo-blue-green.png" alt="Logo" width="200" height="200">
-        </div>
+        <div class="slide logo-slide"><img src="img/logo-blue-green.png" alt="Logo Urbana Express" width="200" height="200" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -104,12 +111,12 @@
       <h2>Contáctanos</h2>
       <ul class="contact-info">
         <li><i class="fas fa-envelope"></i> <a href="mailto:contacto@urbanaexpress.com">contacto@urbanaexpress.com</a></li>
-        <li><i class="fas fa-phone"></i> <a href="tel:+51987654321">+51 987 654 321</a></li>
+        <li><i class="fas fa-phone"></i> <a href="tel:+51987654321">+51 987 654 321</a></li>
       </ul>
       <div class="socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
   </section>
@@ -121,12 +128,14 @@
     </div>
   </footer>
 
+  <!-- Smooth scroll -->
   <script>
-    document.querySelectorAll('.nav-list a').forEach(a=>a.addEventListener('click',e=>{
-      e.preventDefault();
-      document.querySelector(a.getAttribute('href'))
-              .scrollIntoView({behavior:'smooth'});
-    }));
+    document.querySelectorAll('.nav-list a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   </script>
 </body>
 </html>
