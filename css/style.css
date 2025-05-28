@@ -11,6 +11,7 @@
 }
 
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: 'Rubik', sans-serif;
@@ -48,34 +49,53 @@ a {
   0%,100% { transform: translateY(0); }
   50%     { transform: translateY(-8px); }
 }
-.hamburger { display: none; background: none; border: none; cursor: pointer; }
+.hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+}
 .hamburger span {
-  display: block; width: 24px; height: 3px; background: var(--gray-dark);
-  margin-bottom: 4px;
+  display: block; width: 24px; height: 3px;
+  background: var(--gray-dark); margin-bottom: 4px;
 }
 .nav-list {
   display: flex; gap: var(--gap); list-style: none;
 }
-.nav-list.open { display: block; }
-.nav-list a:hover { color: var(--teal); }
+.nav-list.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute; top: 100%; left: 0;
+  width: 100%; background: var(--green-light);
+}
+.nav-list.open a {
+  padding: var(--gap) 0; text-align: center;
+}
+.nav-list a:hover {
+  color: var(--teal);
+}
 
 /* Hero */
 .hero {
   background:
     linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-    url('img/hero-large.webp') center/cover no-repeat;
-  color: var(--white); text-align: center; padding: 6rem 0;
+    url('https://source.unsplash.com/1600x900/?delivery')
+    center/cover no-repeat;
+  color: var(--white);
+  text-align: center; padding: 6rem 0;
 }
 .hero h1 { font-size: clamp(2.5rem,5vw,4rem); margin-bottom: 1rem; }
-.hero p  { font-size: 1.125rem; margin-bottom: 2rem; }
+.hero p { font-size: 1.125rem; margin-bottom: 2rem; }
 .btn-primary {
-  background: var(--orange); color: var(--white);
-  padding: 0.75rem 2rem; border-radius: 4px;
+  background: var(--orange);
+  color: var(--gray-dark);            /* texto negro para contraste */
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
   transition: background 0.3s;
 }
-.btn-primary:hover { background: #e67300; }
+.btn-primary:hover {
+  background: #cc6200;
+}
 
-/* Secciones */
+/* Secciones genéricas */
 .section { padding: 4rem 0; }
 .features h2, .testimonials h2,
 .how-it-works h2, .contact h2 {
@@ -90,8 +110,11 @@ a {
   perspective: 800px;
 }
 .card {
-  background: var(--white); border-radius: 8px; padding: var(--gap);
-  text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: var(--white);
+  border-radius: 8px;
+  padding: var(--gap);
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
@@ -103,16 +126,19 @@ a {
   width: 64px; height: auto; object-fit: contain;
 }
 
-/* Slider */
+/* Slider de testimonios */
 .testimonials { background: var(--green-light); }
 .slider {
   display: flex; overflow: hidden;
 }
 .slide {
-  flex: 0 0 100%; padding: 1rem; text-align: center;
-  font-style: italic; animation: slide 16s infinite;
+  flex: 0 0 100%;
+  padding: 1rem; text-align: center; font-style: italic;
+  animation: slide 16s infinite;
 }
-.slide span { display: block; margin-top: .5rem; font-weight: bold; }
+.slide span {
+  display: block; margin-top: .5rem; font-weight: bold;
+}
 .logo-slide img {
   width: 200px; height: auto; opacity: 0;
   animation: fadeInLogo 1s ease-out forwards 12s;
@@ -125,7 +151,9 @@ a {
   75%,95%  { transform: translateX(-300%); }
   100%     { transform: translateX(0); }
 }
-@keyframes fadeInLogo { to { opacity: 1; } }
+@keyframes fadeInLogo {
+  to { opacity: 1; }
+}
 
 /* Cómo funciona */
 .steps-grid {
@@ -134,15 +162,21 @@ a {
   gap: 2rem;
 }
 .step {
-  background: var(--white); padding: var(--gap);
-  border-radius: 8px; text-align: center;
+  background: var(--white);
+  padding: var(--gap);
+  border-radius: 8px;
+  text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: transform 0.3s;
 }
-.step:hover { transform: translateY(-5px) scale(1.02); }
+.step:hover {
+  transform: translateY(-5px) scale(1.02);
+}
 
 /* Contacto */
-.contact-info { list-style: none; padding: 0; text-align: center; margin-bottom: 1.5rem; }
+.contact-info {
+  list-style: none; padding: 0; text-align: center; margin-bottom: 1.5rem;
+}
 .contact-info li { margin: .5rem 0; font-size: 1.125rem; }
 .contact-info i { margin-right: .5rem; color: var(--orange); }
 .socials {
@@ -152,12 +186,13 @@ a {
   font-size: 1.5rem; color: var(--gray-dark);
   transition: color 0.3s;
 }
-.socials a:hover { color: var(--orange); }
+.socials a:hover {
+  color: var(--orange);
+}
 
 /* Footer */
 .footer {
-  background: var(--green-dark);
-  color: var(--green-light);
+  background: var(--green-dark); color: var(--green-light);
   text-align: center; padding: var(--gap) 0;
 }
 
