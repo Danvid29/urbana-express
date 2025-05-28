@@ -5,36 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Urbana Express – Profesional</title>
   <meta name="description" content="Soluciones de reparto urbano profesionales y confiables">
+
+  <!-- Favicon -->
   <link rel="icon" href="img/favicon.ico">
 
-  <!-- Preload tipografía -->
-  <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
-        as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-  </noscript>
+  <!-- Preconnect y preload fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Preload CSS crítico -->
+  <!-- Preload CSS -->
   <link rel="preload" href="css/style.css" as="style">
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Preload LCP (hero) -->
-  <link rel="preload" as="image" href="img/hero-large.webp" imagesrcset="img/hero-small.webp 480w, img/hero-med.webp 960w, img/hero-large.webp 1600w" imagesizes="100vw" crossorigin>
+  <!-- Preload imágenes críticas -->
+  <link rel="preload" as="image" href="img/hero-small.webp">
+  <link rel="preload" as="image" href="img/icon-fast.webp">
+  <link rel="preload" as="image" href="img/icon-schedule.webp">
+  <link rel="preload" as="image" href="img/icon-secure.webp">
+  <link rel="preload" as="image" href="img/logo-blue-green.webp">
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="container nav-container">
       <a href="#hero" class="logo" aria-label="Volver al inicio">
-        <picture>
-          <source srcset="img/logo.png" type="image/webp">
-          <img src="img/logo.png" alt="Logotipo Urbana Express" width="64" height="64">
-        </picture>
+        <img src="img/logo.png" alt="Logotipo Urbana Express" width="64" height="64">
       </a>
-      <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
       <nav class="nav">
         <ul class="nav-list">
           <li><a href="#hero">Inicio</a></li>
@@ -43,7 +42,9 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <button class="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -61,33 +62,43 @@
     <div class="container">
       <h2>Nuestros Servicios</h2>
       <div class="cards">
+
         <!-- Mensajería Inmediata -->
         <a href="#" class="card">
-          <picture>
-            <source srcset="img/icon-fast.webp" type="image/webp">
-            <img src="img/icon-fast.png" alt="Rápido" width="64" height="64" loading="lazy">
-          </picture>
-          <h3>Mensajería Inmediata</h3>
-          <p>Recojo y entrega en menos de 60 minutos.</p>
+          <div class="card-inner">
+            <picture>
+              <source srcset="img/icon-fast.webp" type="image/webp">
+              <img src="img/icon-fast.png" alt="Rápido" width="64" height="64" loading="lazy">
+            </picture>
+            <h3>Mensajería Inmediata</h3>
+            <p>Recojo y entrega en menos de 60 minutos.</p>
+          </div>
         </a>
+
         <!-- Reparto Programado -->
         <a href="#" class="card">
-          <picture>
-            <source srcset="img/icon-schedule.webp" type="image/webp">
-            <img src="img/icon-schedule.png" alt="Programado" width="64" height="64" loading="lazy">
-          </picture>
-          <h3>Reparto Programado</h3>
-          <p>Elige fecha y hora; nosotros cumplimos.</p>
+          <div class="card-inner">
+            <picture>
+              <source srcset="img/icon-schedule.webp" type="image/webp">
+              <img src="img/icon-schedule.png" alt="Programado" width="64" height="64" loading="lazy">
+            </picture>
+            <h3>Reparto Programado</h3>
+            <p>Elige fecha y hora; nosotros cumplimos.</p>
+          </div>
         </a>
+
         <!-- Entrega Segura -->
         <a href="#" class="card">
-          <picture>
-            <source srcset="img/icon-secure.webp" type="image/webp">
-            <img src="img/icon-secure.png" alt="Seguro" width="64" height="64" loading="lazy">
-          </picture>
-          <h3>Entrega Segura</h3>
-          <p>Seguimiento continuo y confirmación.</p>
+          <div class="card-inner">
+            <picture>
+              <source srcset="img/icon-secure.webp" type="image/webp">
+              <img src="img/icon-secure.png" alt="Seguro" width="64" height="64" loading="lazy">
+            </picture>
+            <h3>Entrega Segura</h3>
+            <p>Seguimiento continuo y confirmación.</p>
+          </div>
         </a>
+
       </div>
     </div>
   </section>
@@ -101,10 +112,7 @@
         <div class="slide">“Muy profesional y eficiente, 5 estrellas.”<span>– Jorge M.</span></div>
         <div class="slide">“Su app de rastreo funciona de maravilla.”<span>– Camila T.</span></div>
         <div class="slide logo-slide">
-          <picture>
-            <source srcset="img/logo-blue-green.webp" type="image/webp">
-            <img src="img/logo-blue-green.png" alt="Logo Urbana Express" width="200" height="200" loading="lazy">
-          </picture>
+          <img src="img/logo-blue-green.webp" alt="Logo Urbana Express" width="200" height="200" loading="lazy">
         </div>
       </div>
     </div>
@@ -125,12 +133,8 @@
     <div class="container">
       <h2>Contáctanos</h2>
       <ul class="contact-info">
-        <li><i class="fas fa-envelope" aria-hidden="true"></i>
-          <a href="mailto:contacto@urbanaexpress.com">contacto@urbanaexpress.com</a>
-        </li>
-        <li><i class="fas fa-phone" aria-hidden="true"></i>
-          <a href="tel:+51987654321">+51 987 654 321</a>
-        </li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:contacto@urbanaexpress.com">contacto@urbanaexpress.com</a></li>
+        <li><i class="fas fa-phone"></i><a href="tel:+51987654321">+51 987 654 321</a></li>
       </ul>
       <div class="socials">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -147,21 +151,12 @@
     </div>
   </footer>
 
-  <!-- Smooth scroll -->
   <script>
-    // Toggle menú hamburguesa
-    const btn = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav-list');
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-    });
     // Smooth scroll
     document.querySelectorAll('.nav-list a').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(a.getAttribute('href'))
-                .scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
