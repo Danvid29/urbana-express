@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urbana Express – Profesional</title>
+  <meta name="description" content="Soluciones de reparto urbano profesionales y confiables">
+  <link rel="icon" href="img/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        <img
+          src="img/logo.png"
+          alt="Logotipo Urbana Express"
+          width="64" height="64"
+        >
+      </a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#features">Servicios</a></li>
+          <li><a href="#testimonials">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <h1>Entrega <strong>Rápida</strong> &amp; <strong>Segura</strong></h1>
+      <p>Servicio premium con rastreo en tiempo real y soporte 24/7</p>
+      <a href="#features" class="btn-primary">Conoce más</a>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="features" class="features section">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <div class="cards">
+        <a href="#" class="card">
+          <div class="card-inner">
+            <img src="img/icon-fast.png" alt="Rápido" width="64" height="64" loading="lazy">
+            <h3>Mensajería Inmediata</h3>
+            <p>Recojo y entrega en menos de 60 minutos.</p>
+          </div>
+        </a>
+        <a href="#" class="card">
+          <div class="card-inner">
+            <img src="img/icon-schedule.png" alt="Programado" width="64" height="64" loading="lazy">
+            <h3>Reparto Programado</h3>
+            <p>Elige fecha y hora; nosotros cumplimos.</p>
+          </div>
+        </a>
+        <a href="#" class="card">
+          <div class="card-inner">
+            <img src="img/icon-secure.png" alt="Seguro" width="64" height="64" loading="lazy">
+            <h3>Entrega Segura</h3>
+            <p>Seguimiento continuo y confirmación.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonials" class="testimonials section">
+    <div class="container">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="slider">
+        <div class="slide">“Excelente servicio, mi paquete llegó en 30 minutos.”<span>– Laura R.</span></div>
+        <div class="slide">“Muy profesional y eficiente, 5 estrellas.”<span>– Jorge M.</span></div>
+        <div class="slide">“Su app de rastreo funciona de maravilla.”<span>– Camila T.</span></div>
+        <div class="slide logo-slide">
+          <img src="img/logo-blue-green.png" alt="Logo" width="200" height="200">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section id="how-it-works" class="how-it-works section">
+    <div class="container steps-grid">
+      <div class="step"><h3>1. Solicita tu envío</h3><p>Llena los datos en minutos.</p></div>
+      <div class="step"><h3>2. Rastrea en vivo</h3><p>Actualizaciones instantáneas.</p></div>
+      <div class="step"><h3>3. Recibe rápido</h3><p>Paquete entregado en tiempo récord.</p></div>
+      <div class="step"><h3>4. Confirma entrega</h3><p>Notificación al instante.</p></div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact section">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <ul class="contact-info">
+        <li><i class="fas fa-envelope"></i> <a href="mailto:contacto@urbanaexpress.com">contacto@urbanaexpress.com</a></li>
+        <li><i class="fas fa-phone"></i> <a href="tel:+51987654321">+51 987 654 321</a></li>
+      </ul>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Urbana Express. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.nav-list a').forEach(a=>a.addEventListener('click',e=>{
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))
+              .scrollIntoView({behavior:'smooth'});
+    }));
+  </script>
+</body>
+</html>
